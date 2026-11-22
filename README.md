@@ -1,11 +1,26 @@
 # SpotiRPC
 
-Show Spotify playback on your Discord profile without linking your Spotify account.
+**Spotify Rich Presence for Discord on Linux.** Share what you’re listening to without linking your Spotify account to Discord.
 
-SpotiRPC runs on Linux and needs Python 3.9+, `busctl`, and the Spotify and Discord desktop apps.
+SpotiRPC shows the track, artist credits, album artwork, and playback progress. Friends can open the track with **Play on Spotify**. Replays get a small session counter, and paused playback shows a simple **Idle** card.
 
-1. Create an app in the [Discord Developer Portal](https://discord.com/developers/applications) and copy its Application ID.
-2. Create a `.env` file next to `spotirpc.py` with `DISCORD_APPLICATION_ID=your_application_id`.
-3. Open Spotify and Discord, enable Discord Activity Sharing, and run `python3 spotirpc.py`.
+## Setup
 
-Press Ctrl+C to stop. Pause Spotify to show the Idle card.
+You’ll need Python 3.9 or newer, `busctl`, and the Spotify and Discord desktop apps.
+
+1. Create an application in the [Discord Developer Portal](https://discord.com/developers/applications). Name it **Spotify** if you want Discord to say **Listening to Spotify**.
+2. Create a `.env` file beside `spotirpc.py` and paste the Application ID from **General Information**:
+
+   ```dotenv
+   DISCORD_APPLICATION_ID=your_application_id
+   ```
+
+3. Open both desktop apps, enable **Activity Sharing** in Discord, and run:
+
+   ```sh
+   python3 spotirpc.py
+   ```
+
+Press Ctrl+C to stop sharing. Discord shows the **Play on Spotify** button to other viewers of your profile.
+
+SpotiRPC reads local playback over D-Bus and uses Spotify’s public track pages to fill in artist credits when needed. If you use Spotify’s Private Session and want to keep that playback off Discord, stop SpotiRPC or turn off Discord Activity Sharing.
