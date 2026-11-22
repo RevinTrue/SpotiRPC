@@ -159,6 +159,7 @@ def spotify_activity(credits):
 
     if artists:
         activity["state"] = artists[:128]
+        activity["status_display_type"] = 1
 
     cover = track.get("mpris:artUrl")
     if isinstance(cover, str) and cover.startswith("https://"):
