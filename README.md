@@ -1,8 +1,12 @@
-# SpotiRPC
+![SpotiRPC · Spotify Rich Presence for Discord on Linux](assets/banner.webp)
 
-**Spotify Rich Presence for Discord on Linux.** Share what you’re listening to without linking your Spotify account to Discord.
+Share what you’re listening to on Discord without linking your Spotify account.
+
+## <img src="assets/icon.svg" width="28" alt=""> What it shows
 
 SpotiRPC shows the track, artist credits, album artwork, and playback progress. Friends can open the track with **Play on Spotify**. Replays get a small session counter, and paused playback shows a simple **Idle** card.
+
+> **Linux only.** Tested on Linux with the Spotify and Discord desktop apps. Other Linux setups may have bugs, and Windows and macOS are unsupported.
 
 ## Setup
 
